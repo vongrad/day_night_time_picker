@@ -93,34 +93,48 @@ class DayNightTimePickerAndroidState extends State<DayNightTimePickerAndroid> {
                           textDirection: ltrMode,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                            DisplayValue(
-                              onTap: timeState.widget.disableHour!
-                                  ? null
-                                  : () {
-                                      timeState.onSelectedInputChange(
+                            Expanded(
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  DisplayValue(
+                                    onTap: timeState.widget.disableHour!
+                                        ? null
+                                        : () {
+                                            timeState.onSelectedInputChange(
+                                              SelectedInput.HOUR,
+                                            );
+                                          },
+                                    value: hourValue.toString().padLeft(2, '0'),
+                                    isSelected: timeState.selected ==
                                         SelectedInput.HOUR,
-                                      );
-                                    },
-                              value: hourValue.toString().padLeft(2, '0'),
-                              isSelected:
-                                  timeState.selected == SelectedInput.HOUR,
+                                  ),
+                                ],
+                              ),
                             ),
                             const DisplayValue(
                               value: ':',
                             ),
-                            DisplayValue(
-                              onTap: timeState.widget.disableMinute!
-                                  ? null
-                                  : () {
-                                      timeState.onSelectedInputChange(
+                            Expanded(
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  DisplayValue(
+                                    onTap: timeState.widget.disableMinute!
+                                        ? null
+                                        : () {
+                                            timeState.onSelectedInputChange(
+                                              SelectedInput.MINUTE,
+                                            );
+                                          },
+                                    value: timeState.time.minute
+                                        .toString()
+                                        .padLeft(2, '0'),
+                                    isSelected: timeState.selected ==
                                         SelectedInput.MINUTE,
-                                      );
-                                    },
-                              value: timeState.time.minute
-                                  .toString()
-                                  .padLeft(2, '0'),
-                              isSelected:
-                                  timeState.selected == SelectedInput.MINUTE,
+                                  ),
+                                ],
+                              ),
                             ),
                             ...timeState.widget.showSecondSelector
                                 ? [
