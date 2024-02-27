@@ -29,6 +29,8 @@ class TimeModelBinding extends StatefulWidget {
   /// Accent color of unselected text.
   final Color? unselectedColor;
 
+  final Color? backgroundColor;
+
   /// Text displayed for the Cancel button.
   String cancelText;
 
@@ -104,6 +106,8 @@ class TimeModelBinding extends StatefulWidget {
   /// Whether to display the time from left to right or right to left.(Standard: left to right)
   final bool ltrMode;
 
+  final TextStyle hourStyle;
+
   /// Ok button's text style [TextStyle]
   TextStyle okStyle;
 
@@ -164,6 +168,7 @@ class TimeModelBinding extends StatefulWidget {
     this.is24HrFormat = false,
     this.displayHeader,
     this.accentColor,
+    this.backgroundColor,
     this.ltrMode = true,
     this.unselectedColor,
     this.cancelText = 'cancel',
@@ -192,6 +197,7 @@ class TimeModelBinding extends StatefulWidget {
     this.focusMinutePicker = false,
     this.okStyle = const TextStyle(fontWeight: FontWeight.bold),
     this.cancelStyle = const TextStyle(fontWeight: FontWeight.bold),
+    this.hourStyle = const TextStyle(fontWeight: FontWeight.bold),
     this.buttonStyle,
     this.cancelButtonStyle,
     this.buttonsSpacing,

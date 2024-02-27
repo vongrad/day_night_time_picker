@@ -48,9 +48,6 @@ class DayNightTimePickerAndroidState extends State<DayNightTimePickerAndroid> {
       divisions = (max - min).round();
     }
 
-    final color =
-        timeState.widget.accentColor ?? Theme.of(context).colorScheme.secondary;
-
     final hourValue = timeState.widget.is24HrFormat
         ? timeState.time.hour
         : timeState.time.hourOfPeriod;
@@ -169,8 +166,6 @@ class DayNightTimePickerAndroidState extends State<DayNightTimePickerAndroid> {
                         min: min,
                         max: max,
                         divisions: divisions,
-                        activeColor: color,
-                        inactiveColor: color.withAlpha(55),
                       ),
                       if (!hideButtons) const ActionButtons(),
                     ],

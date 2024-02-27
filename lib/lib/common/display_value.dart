@@ -25,11 +25,11 @@ class DisplayValue extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final timeState = TimeModelBinding.of(context);
-    final _commonTimeStyles =
-        Theme.of(context).textTheme.displayMedium!.copyWith(
-              fontSize: 62,
-              fontWeight: FontWeight.bold,
-            );
+
+    final _commonTimeStyles = timeState.widget.hourStyle.copyWith(
+      fontSize: 62,
+      fontWeight: FontWeight.bold,
+    );
 
     final color =
         timeState.widget.accentColor ?? Theme.of(context).colorScheme.secondary;

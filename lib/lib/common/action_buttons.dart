@@ -42,23 +42,27 @@ class ActionButtons extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
-          TextButton(
-            style: (timeState.widget.cancelButtonStyle ??
-                    timeState.widget.buttonStyle) ??
-                defaultButtonStyle,
-            onPressed: timeState.onCancel,
-            child: Text(
-              timeState.widget.cancelText,
-              style: timeState.widget.cancelStyle,
+          Expanded(
+            child: TextButton(
+              style: (timeState.widget.cancelButtonStyle ??
+                      timeState.widget.buttonStyle) ??
+                  defaultButtonStyle,
+              onPressed: timeState.onCancel,
+              child: Text(
+                timeState.widget.cancelText,
+                style: timeState.widget.cancelStyle,
+              ),
             ),
           ),
           SizedBox(width: timeState.widget.buttonsSpacing ?? 0),
-          TextButton(
-            onPressed: timeState.onOk,
-            style: timeState.widget.buttonStyle ?? defaultButtonStyle,
-            child: Text(
-              timeState.widget.okText,
-              style: timeState.widget.okStyle,
+          Expanded(
+            child: TextButton(
+              onPressed: timeState.onOk,
+              style: timeState.widget.buttonStyle ?? defaultButtonStyle,
+              child: Text(
+                timeState.widget.okText,
+                style: timeState.widget.okStyle,
+              ),
             ),
           ),
         ],
