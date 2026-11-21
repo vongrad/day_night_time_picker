@@ -124,6 +124,10 @@ class TimeModelBinding extends StatefulWidget {
   /// Spacing between ok and cancel buttons
   double? buttonsSpacing;
 
+  /// Builds the cancel and ok buttons in place of the default ones
+  Widget Function(VoidCallback onCancel, VoidCallback onOk)?
+      actionButtonsBuilder;
+
   /// The child [Widget] to render
   final Widget child;
 
@@ -201,6 +205,7 @@ class TimeModelBinding extends StatefulWidget {
     this.buttonStyle,
     this.cancelButtonStyle,
     this.buttonsSpacing,
+    this.actionButtonsBuilder,
     this.wheelHeight,
     this.hideButtons = false,
     this.disableAutoFocusToNextInput = false,

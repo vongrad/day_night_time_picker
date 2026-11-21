@@ -20,6 +20,13 @@ class ActionButtons extends StatelessWidget {
       );
     }
 
+    final actionButtonsBuilder = timeState.widget.actionButtonsBuilder;
+    if (actionButtonsBuilder != null) {
+      return Expanded(
+        child: actionButtonsBuilder(timeState.onCancel, timeState.onOk),
+      );
+    }
+
     if (!timeState.widget.showCancelButton) {
       return Expanded(
         child: Row(

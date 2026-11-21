@@ -145,6 +145,8 @@ dynamic showPicker({
   ButtonStyle? buttonStyle,
   ButtonStyle? cancelButtonStyle,
   double? buttonsSpacing,
+  Widget Function(VoidCallback onCancel, VoidCallback onOk)?
+      actionButtonsBuilder,
   bool hideButtons = false,
   bool disableAutoFocusToNextInput = false,
   double width = 300,
@@ -222,6 +224,7 @@ dynamic showPicker({
         buttonStyle: buttonStyle,
         cancelButtonStyle: cancelButtonStyle,
         buttonsSpacing: buttonsSpacing,
+        actionButtonsBuilder: actionButtonsBuilder,
         hourLabel: hourLabel,
         minuteLabel: minuteLabel,
         secondLabel: secondLabel,
